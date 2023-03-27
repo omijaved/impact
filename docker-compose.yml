@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  admin-portal:
+    image: react-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      REACT_APP_BACKEND_URL: 'https://internalbackend-dev.clubpact.co/'
+      REACT_APP_CLIENT_ID: '4b07auf0l0cvbvbelok46ogb3g'
+      REACT_APP_USER_POOL_ID: 'us-east-2_gDshoNeUR'
+    ports:
+      - "3000:8080"
